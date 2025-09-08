@@ -6,7 +6,7 @@ namespace SeleniumNUnitProject
 {
     public class GoogleTests
     {
-        private IWebDriver driver;
+        private ChromeDriver driver;
 
         [SetUp]
         public void Setup()
@@ -17,12 +17,12 @@ namespace SeleniumNUnitProject
         [Test]
         public void GoogleSearch_ShouldReturnResults()
         {
-            driver.Navigate().GoToUrl("https://www.google.com");
-            var searchBox = driver.FindElement(By.Name("q"));
-            searchBox.SendKeys("Test Automation");
-            searchBox.Submit();
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            driver.FindElement(By.Name("user-name")).SendKeys("standard_user");
+            driver.FindElement(By.Name("password")).SendKeys("secret_sauce");
+            driver.FindElement(By.Name("login-button")).Submit();
 
-            Assert.That(driver.Title, Does.Contain("Search"));
+            Assert.That(driver.Title, Does.Contain("Swag Labs"));
         }
 
         [TearDown]
