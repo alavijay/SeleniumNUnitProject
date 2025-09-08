@@ -25,6 +25,7 @@ This project is a sample **C# Selenium automation framework** using **NUnit**.
 
 ## Add Selenium WebDriver packages via Terminal from project folder
 
-```dotnet add package Selenium.WebDriver
+```
+dotnet add package Selenium.WebDriver
 dotnet add package Selenium.Support
 dotnet add package Selenium.WebDriver.ChromeDriver
